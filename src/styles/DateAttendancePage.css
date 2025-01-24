@@ -1,0 +1,88 @@
+.dashboard-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f6fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+}
+
+.teacher-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #273c75;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.teacher-info p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.subject-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #273c75;
+    margin-bottom: 20px;
+}
+
+.attendance-date {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #1d2e55;
+}
+
+.dashboard-list {
+    list-style: none;
+    padding: 0;
+}
+
+.attendance-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1e3f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.status-dropdown {
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid #d1e3f8;
+    font-size: 1rem;
+}
+
+.save-button {
+    width: 100%;
+    background-color: #218838;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.save-button:hover {
+    background-color: #1c7430;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: center;
+}

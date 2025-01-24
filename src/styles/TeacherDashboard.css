@@ -1,0 +1,74 @@
+.dashboard-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f6fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+}
+
+.teacher-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #273c75;
+    color: white;
+    border-radius: 8px;
+}
+
+.teacher-info {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.teacher-barcode {
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.dashboard-subtitle {
+    font-size: 1.5rem;
+    color: #1d2e55;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.subject-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.subject-card {
+    background-color: #ffffff;
+    border: 1px solid #d1e3f8;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.subject-details h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #273c75;
+}
+
+.subject-details p {
+    margin: 10px 0 0;
+    color: #555555;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #333333;
+}
