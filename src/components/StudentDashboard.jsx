@@ -33,8 +33,7 @@ const StudentDashboard = () => {
             <header className="student-header">
                 <div className="student-info">
                     <h1>{data.studentName} {data.studentSurname}</h1>
-                    <p>Barcode: {data.studentBarcode}</p>
-                    <p>Group: {data.groupName}</p>
+                    <p>Barcode: {data.studentBarcode} <br/> Group: {data.groupName}</p>
                 </div>
             </header>
 
@@ -49,8 +48,9 @@ const StudentDashboard = () => {
                             <h3>{subject.subjectName}</h3>
                             <p>{subject.teacherName}</p>
                         </div>
+                        <br/>
                         <div className={`attendance-status ${subject.attendancePercent >= 70 ? "green" : "red"}`}>
-                            {subject.attendancePercent}%
+                            66,66{subject.attendancePercent}%
                         </div>
                     </div>
                 ))}

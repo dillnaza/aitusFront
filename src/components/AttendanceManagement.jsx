@@ -62,7 +62,7 @@ const AttendanceManagement = () => {
         <div className="dashboard-container">
             {/* Информация о преподавателе */}
             <div className="teacher-info">
-                <p><strong>Name:</strong> {attendanceData.teacherName} {attendanceData.teacherSurname}</p>
+                <p><strong></strong> {attendanceData.teacherName} {attendanceData.teacherSurname}</p>
                 <p><strong>Barcode:</strong> {attendanceData.teacherBarcode}</p>
             </div>
 
