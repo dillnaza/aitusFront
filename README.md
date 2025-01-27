@@ -14,7 +14,7 @@ To run this project locally or deploy it to your server, follow these steps:
 
 1. **Clone the Repository:**
    ```
-   git clone https://github.com/dillnaza/aitus
+   git clone https://github.com/dillnaza/aitusFront
    ```
 
 2. **Install Dependencies:**
