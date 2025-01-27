@@ -9,45 +9,41 @@ import "../index.css";
 const AttendanceManagement = () => {
     const { teacherId, subjectId, groupId } = useParams();
     const [attendanceData, setAttendanceData] = useState(null);
-    const [newDateTime, setNewDateTime] = useState(null); // Для выбора даты и времени
+    const [newDateTime, setNewDateTime] = useState(null);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
-    // Загружаем данные о датах посещаемости
     const loadAttendanceDates = async () => {
         try {
             const data = await fetchAttendanceDates(teacherId, subjectId, groupId);
             setAttendanceData(data);
-            setError(null); // Сбрасываем ошибку
+            setError(null);
         } catch (err) {
             setError("Failed to load attendance data");
         }
     };
 
-    // Добавляем новую дату
     const handleAddDate = async () => {
         if (!newDateTime) return;
         try {
-            const isoDate = newDateTime.toISOString(); // Преобразуем дату и время в ISO-формат
+            const isoDate = newDateTime.toISOString();
             await addAttendanceDate(teacherId, subjectId, groupId, isoDate);
-            loadAttendanceDates(); // Перезагружаем данные
-            setNewDateTime(null); // Очищаем поле ввода
+            await loadAttendanceDates();
+            setNewDateTime(null);
         } catch (err) {
             setError("Failed to add attendance date");
         }
     };
 
-    // Удаляем дату
     const handleDeleteDate = async (date) => {
         try {
             await deleteAttendanceDate(teacherId, subjectId, groupId, date);
-            loadAttendanceDates(); // Перезагружаем данные
+            await loadAttendanceDates();
         } catch (err) {
             setError("Failed to delete attendance date");
         }
     };
 
-    // Обработка клика на дату для перехода
     const handleViewDate = (date) => {
         navigate(`/teacher/${teacherId}/subject/${subjectId}/group/${groupId}/attendance/${encodeURIComponent(date)}`);
     };
@@ -60,34 +56,27 @@ const AttendanceManagement = () => {
 
     return (
         <div className="dashboard-container">
-            {/* Информация о преподавателе */}
             <div className="teacher-info">
                 <p><strong></strong> {attendanceData.teacherName} {attendanceData.teacherSurname}</p>
                 <p><strong>Barcode:</strong> {attendanceData.teacherBarcode}</p>
             </div>
-
-            {/* Название предмета и группы */}
             <h1 className="subject-title">
                 {attendanceData.subjectName} - {attendanceData.groupName}
             </h1>
-
             {error && <p className="error-message">{error}</p>}
             <ul className="dashboard-list">
                 {attendanceData.attendanceDates.map((date, index) => (
                     <li
                         key={index}
                         className="dashboard-item"
-                        onClick={() => handleViewDate(date)} // Переход при клике
-                        style={{ cursor: "pointer" }} // Указываем курсор для интерактивности
-                    >
+                        onClick={() => handleViewDate(date)}
+                        style={{ cursor: "pointer" }}>
                         <span>{new Date(date).toLocaleString()}</span>
                         <button
                             onClick={(e) => {
-                                e.stopPropagation(); // Предотвращаем срабатывание клика на элемент списка
-                                handleDeleteDate(date);
-                            }}
-                            className="delete-button"
-                        >
+                                e.stopPropagation();
+                                handleDeleteDate(date);}}
+                            className="delete-button">
                             Delete
                         </button>
                     </li>
@@ -98,10 +87,9 @@ const AttendanceManagement = () => {
                     selected={newDateTime}
                     onChange={(date) => setNewDateTime(date)}
                     showTimeSelect
-                    dateFormat="Pp" // Формат даты и времени
+                    dateFormat="Pp"
                     className="date-picker"
-                    placeholderText="Select date and time"
-                />
+                    placeholderText="Select date and time"/>
                 <button onClick={handleAddDate} className="add-button">Add Date</button>
             </div>
         </div>

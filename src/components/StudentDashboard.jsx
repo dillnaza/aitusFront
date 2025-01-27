@@ -36,14 +36,12 @@ const StudentDashboard = () => {
                     <p>Barcode: {data.studentBarcode} <br/> Group: {data.groupName}</p>
                 </div>
             </header>
-
             <div className="subject-list">
                 {data.subjectTeacher && data.subjectTeacher.map((subject, index) => (
                     <div
                         key={index}
                         className="subject-card"
-                        onClick={() => navigate(`/student/${studentId}/subject/${index + 1}`)}
-                    >
+                        onClick={() => navigate(`/student/${studentId}/subject/${index + 1}`)}>
                         <div className="subject-details">
                             <h3>{subject.subjectName}</h3>
                             <p>{subject.teacherName}</p>

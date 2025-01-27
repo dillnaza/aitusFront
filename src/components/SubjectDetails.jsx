@@ -29,20 +29,16 @@ const SubjectDetails = () => {
 
     return (
         <div className="dashboard-container">
-            {/* Данные студента */}
             <div className="student-info">
                 <p>{data.studentName} {data.studentSurname}</p>
                 <p>Barcode: {data.studentBarcode}</p>
             </div>
-            {/* Информация о предмете */}
             <h1 className="subject-title">{data.subjectName}</h1>
             <p className="subject-teacher">Teacher: {data.teacherName} {data.teacherSurname}</p>
             <div className="subject-info">
                 <p>Group: {data.groupName}</p>
                 <p>Attendance Percentage: {data.attendancePercent}%</p>
             </div>
-
-            {/* Записи посещений */}
             <ul className="dashboard-list">
                 {data.attendances.map((attendance, index) => (
                     <li
@@ -54,9 +50,7 @@ const SubjectDetails = () => {
                                     ? "status-green"
                                     : attendance.status === "Late"
                                         ? "status-yellow"
-                                        : ""
-                        }`}
-                    >
+                                        : ""}`}>
                         <span>Date: {new Date(attendance.date).toLocaleDateString()}</span>
                         <span>Status: {attendance.status}</span>
                     </li>

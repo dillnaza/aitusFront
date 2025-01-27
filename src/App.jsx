@@ -16,12 +16,10 @@ const App = () => {
                 <Route path="/teacher/:teacherId" element={<TeacherPage />} />
                 <Route
                     path="/teacher/:teacherId/subject/:subjectId/group/:groupId/attendance-management"
-                    element={<AttendanceManagement />}
-                />
+                    element={<AttendanceManagement />}/>
                 <Route
                     path="/teacher/:teacherId/subject/:subjectId/group/:groupId/attendance/:date"
-                    element={<DateAttendancePage />}
-                />
+                    element={<DateAttendancePage />}/>
             </Routes>
         </Router>
     );

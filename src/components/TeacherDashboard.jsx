@@ -25,12 +25,10 @@ const TeacherDashboard = () => {
 
     return (
         <div className="dashboard-container">
-            {/* Приветствие */}
             <div className="teacher-header">
                 <h1 className="teacher-info">{data.teacherName} {data.teacherSurname}</h1>
                 <p className="teacher-barcode">Barcode: {data.teacherBarcode}</p>
             </div>
-
             <div className="subject-list">
                 {data.subjectGroup.map((sg, index) => (
                     <div
@@ -38,8 +36,7 @@ const TeacherDashboard = () => {
                         className="subject-card"
                         onClick={() =>
                             navigate(`/teacher/${teacherId}/subject/${sg.subjectId}/group/${sg.groupId}/attendance-management`)
-                        }
-                    >
+                        }>
                         <div className="subject-details">
                             <h3>{sg.subjectName}</h3>
                             <p>{sg.groupName}</p>

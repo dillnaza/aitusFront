@@ -1,30 +1,24 @@
-/* BaseLayout.css */
-
-/* Обеспечиваем, что html и body занимают всю высоту окна */
 html, body {
-  height: 100%; /* Высота страницы равна высоте окна */
+  height: 100%;
   margin: 0;
   font-family: 'Roboto', sans-serif;
   background-color: #f4f6f9;
   color: #333;
 }
 
-/* Главный контейнер для всей страницы */
 .page-container {
   display: flex;
   flex-direction: column;
-  min-height: 100%; /* Контейнер занимает всю высоту окна */
+  min-height: 100%;
 }
 
-/* Основной контент */
 .container {
-  flex: 1; /* Растягивается, чтобы занять всё доступное пространство */
+  flex: 1;
   padding: 20px;
   margin: 0 auto;
-  max-width: 900px; /* Ограничение ширины основного контента */
+  max-width: 900px;
 }
 
-/* Футер */
 .footer {
   display: flex;
   justify-content: center;
@@ -33,9 +27,9 @@ html, body {
   color: white;
   padding: 15px 20px;
   text-align: center;
-  height: 80px; /* Фиксированная высота футера */
+  height: 80px;
   border-top: 3px solid #273c75;
-  margin-top: auto; /* Сдвигает футер вниз, если контента недостаточно */
+  margin-top: auto
 }
 
 .footer img {

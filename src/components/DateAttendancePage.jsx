@@ -10,6 +10,7 @@ const DateAttendancePage = () => {
     const [subjectDetails, setSubjectDetails] = useState(null);
     const [attendance, setAttendance] = useState([]);
     const [error, setError] = useState(null);
+
     const loadStudents = async () => {
         try {
             const data = await fetchGroupStudents(groupId);
@@ -24,6 +25,7 @@ const DateAttendancePage = () => {
             setError("Failed to load students");
         }
     };
+
     const loadSubjectDetails = async () => {
         try {
             const data = await fetchSubjectDetails(teacherId, subjectId);
@@ -32,6 +34,7 @@ const DateAttendancePage = () => {
             setError("Failed to load subject details");
         }
     };
+
     const handleAttendanceChange = (index, status) => {
         setAttendance((prevAttendance) =>
             prevAttendance.map((item, i) =>
@@ -47,11 +50,14 @@ const DateAttendancePage = () => {
             setError("Failed to save attendance");
         }
     };
+
     useEffect(() => {
         loadStudents();
         loadSubjectDetails();
     }, [groupId, teacherId, subjectId]);
+
     if (students === null || subjectDetails === null) return <div>Loading...</div>;
+
     return (
         <div className="dashboard-container">
             <div className="teacher-info">

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: "http://localhost:5032/api", // Update the base URL to match your backend
+    baseURL: "http://localhost:5032/api",
 });
 
 export const login = async (email, password) => {
