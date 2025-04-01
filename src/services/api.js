@@ -76,17 +76,6 @@ export const deleteAttendanceDate = async (teacherId, subjectId, groupId, date) 
     }
 };
 
-export const fetchDateAttendance = async (teacherId, subjectId, groupId, date) => {
-    try {
-        const response = await API.get(
-            `/TeacherMain/${teacherId}/subject/${subjectId}/group/${groupId}/attendances/${date}`
-        );
-        return response.data;
-    } catch (error) {
-        throw error.response.data;
-    }
-};
-
 export const postAttendanceData = async (teacherId, subjectId, groupId, date, attendance) => {
     try {
         const response = await API.post(
